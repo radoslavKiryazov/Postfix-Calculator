@@ -2,6 +2,8 @@
 ADS Assignment 
 
 REQUIREMENTS:
+
+
 The postfix expression calculator is using a stack which is an abstract data structure. To implement the stack use as underlying data structure a generic linked list. In the linked list it is only necessary to implement the operations required for this assignment.
 
 The program must provide an API with just one operation:  
