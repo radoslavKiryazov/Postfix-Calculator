@@ -1,5 +1,6 @@
 package stack;
 
+import com.example.postfixcalculator.stack.Stack;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 

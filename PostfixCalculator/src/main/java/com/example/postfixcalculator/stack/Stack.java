@@ -1,6 +1,6 @@
-package stack;
+package com.example.postfixcalculator.stack;
 
-import linkedlist.LinkedList;
+import com.example.postfixcalculator.linkedlist.LinkedList;
 
 public class Stack<T> {
     private final LinkedList<T> list;

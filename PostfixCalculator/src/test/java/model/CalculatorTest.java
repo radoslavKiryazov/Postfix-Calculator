@@ -1,5 +1,9 @@
 package model;
 
+import com.example.postfixcalculator.model.Calculator;
+import com.example.postfixcalculator.model.Operand;
+import com.example.postfixcalculator.model.Operator;
+import com.example.postfixcalculator.model.Token;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -22,13 +26,13 @@ class CalculatorTest {
         //assertTrue(1 == 0);
         tokens.add(new Operand(5.0));
         tokens.add(new Operand(3.0));
-        tokens.add(new Operator('+'));
+        tokens.add(new Operator("+"));
 
         tokens.add(new Operand(2.0));
-        tokens.add(new Operator('*'));
+        tokens.add(new Operator("*"));
 
         tokens.add(new Operand(4.0));
-        tokens.add(new Operator('/'));
+        tokens.add(new Operator("/"));
 
 
         int result = calculator.evaluateExpression(tokens);
@@ -51,7 +55,7 @@ class CalculatorTest {
         //assertTrue(1 == 0);
         tokens.add(new Operand(5.0));
         tokens.add(new Operand(3.0));
-        tokens.add(new Operator('+'));
+        tokens.add(new Operator("+"));
         int result = calculator.evaluateExpression(tokens);
         assertEquals(8, result);
     }
@@ -60,7 +64,7 @@ class CalculatorTest {
         //assertTrue(1 == 0);
         tokens.add(new Operand(5.0));
         tokens.add(new Operand(3.0));
-        tokens.add(new Operator('-'));
+        tokens.add(new Operator("-"));
         int result = calculator.evaluateExpression(tokens);
         assertEquals(2, result);
     }
@@ -69,7 +73,7 @@ class CalculatorTest {
         //assertTrue(1 == 0);
         tokens.add(new Operand(5.0));
         tokens.add(new Operand(3.0));
-        tokens.add(new Operator('*'));
+        tokens.add(new Operator("*"));
         int result = calculator.evaluateExpression(tokens);
         assertEquals(15, result);
     }
@@ -78,7 +82,7 @@ class CalculatorTest {
         //assertTrue(1 == 0);
         tokens.add(new Operand(6.0));
         tokens.add(new Operand(2.0));
-        tokens.add(new Operator('/'));
+        tokens.add(new Operator("/"));
         int result = calculator.evaluateExpression(tokens);
         assertEquals(3, result);
     }
@@ -87,7 +91,7 @@ class CalculatorTest {
         //assertTrue(1 == 0);
         tokens.add(new Operand(5.0));
         tokens.add(new Operand(3.0));
-        tokens.add(new Operator('%'));
+        tokens.add(new Operator("%"));
         assertThrows(IllegalArgumentException.class, () -> calculator.evaluateExpression(tokens));
     }
     @Test
@@ -95,7 +99,7 @@ class CalculatorTest {
         //assertTrue(1 == 0);
         tokens.add(new Operand(5.0));
         tokens.add(new Operand(0.0));
-        tokens.add(new Operator('/'));
+        tokens.add(new Operator("/"));
         // Division by zero should throw an exception
         assertThrows(ArithmeticException.class, () -> calculator.evaluateExpression(tokens));
     }

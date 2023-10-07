@@ -1,4 +1,4 @@
-package linkedlist;
+package com.example.postfixcalculator.linkedlist;
 
 public class Node<T> {
     T data;

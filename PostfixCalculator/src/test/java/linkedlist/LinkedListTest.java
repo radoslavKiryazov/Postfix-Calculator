@@ -1,5 +1,6 @@
 package linkedlist;
 
+import com.example.postfixcalculator.linkedlist.LinkedList;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 

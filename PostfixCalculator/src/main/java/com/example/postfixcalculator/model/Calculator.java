@@ -1,9 +1,11 @@
-package model;
+package com.example.postfixcalculator.model;
 
-import stack.Stack;
+import com.example.postfixcalculator.stack.Stack;
+import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 
+@Service
 public class Calculator {
     public int evaluateExpression(ArrayList<Token> tokenList) {
         Stack<Double> stack = new Stack<>();
@@ -11,7 +13,7 @@ public class Calculator {
             if (token instanceof Operand) { //check if number
                 stack.push(((Operand) token).value);
             } else if (token instanceof Operator) { //check if operation
-                char operator = (((Operator) token).sign); // get the operator
+                String operator = (((Operator) token).sign); // get the operator
                 double operand2 = stack.pop(); //pop operand 2
                 double operand1 = stack.pop(); //pop operand 1
 
@@ -26,13 +28,13 @@ public class Calculator {
         return (int) Math.round(stack.pop()); //pop the result and parse it to an int
     }
 
-    public double applyOperator(double operand1, double operand2, char operator) {
+    public double applyOperator(double operand1, double operand2, String operator) {
 
         return switch (operator) {
-            case '+' -> operand1 + operand2;
-            case '-' -> operand1 - operand2;
-            case '*' -> operand1 * operand2;
-            case '/' -> {
+            case "+" -> operand1 + operand2;
+            case "-" -> operand1 - operand2;
+            case "*" -> operand1 * operand2;
+            case "/" -> {
                 if (operand2 == 0) {
                     throw new ArithmeticException("division by zero big no no");
                 }
