@@ -26,7 +26,7 @@ public class Calculator {
         return (int) Math.round(stack.pop()); //pop the result and parse it to an int
     }
 
-    private double applyOperator(double operand1, double operand2, char operator) {
+    public double applyOperator(double operand1, double operand2, char operator) {
 
         return switch (operator) {
             case '+' -> operand1 + operand2;
