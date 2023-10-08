@@ -1,7 +1,6 @@
 package com.example.postfixcalculator.controller;
 
 import com.example.postfixcalculator.model.*;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -22,7 +21,6 @@ public class CalculatorController {
     @PostMapping("/calculator")
     public ResponseEntity<Integer> evaluateExpression(@RequestBody ArrayList<TokenWrapper> tokenWrappers) {
 
-
         int result = calculator.evaluateExpression(parseToTokens(tokenWrappers));
         return new ResponseEntity<>(result, HttpStatus.OK);
     }
@@ -33,14 +31,14 @@ public class CalculatorController {
         for (TokenWrapper wrapper : tokenWrappers) {
             String type = wrapper.getType();
 
-            if ("operand".equals(type)) {
+            if (type.equals("operand")) {
                 Operand operand = wrapper.getOperand();
                 tokens.add(operand);
-            } else if ("operator".equals(type)) {
+            } else if (type.equals("operator")) {
                 Operator operator = wrapper.getOperator();
                 tokens.add(operator);
             } else {
-                throw new IllegalArgumentException("Unknown token type: " + type);
+                throw new IllegalArgumentException("unknown token type: " + type);
             }
         }
         System.out.println(tokens);

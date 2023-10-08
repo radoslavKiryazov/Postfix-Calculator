@@ -8,8 +8,8 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class LinkedListTest {
 
-    /*running with coverage says that the test hit 68% lines
-    cuz I decided not to test the printer method, I see no point to do so.
+    /*running with coverage says that the test hit 68% lines that is
+    because I decided not to test the printer method, I see no point to do so.
     ignoring that its full 100% */
     private LinkedList<Integer> linkedList;
 

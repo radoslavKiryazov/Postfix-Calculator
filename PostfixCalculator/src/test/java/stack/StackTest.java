@@ -52,6 +52,7 @@ class StackTest {
         //assertTrue(1 == 0);
         stack.push(1);
         assertFalse(stack.isEmpty());
+
         stack.pop();
         assertTrue(stack.isEmpty());
     }

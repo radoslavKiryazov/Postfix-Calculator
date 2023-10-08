@@ -1,6 +1,5 @@
 package com.example.postfixcalculator.model;
 
-import com.fasterxml.jackson.annotation.JsonTypeName;
 
 public class Operator implements Token {
     String sign;
